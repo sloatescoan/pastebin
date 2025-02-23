@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:pastebin}",
+            "name": "Debug pastebin",
+            "program": "${workspaceFolder:pastebin}/.build/debug/pastebin",
+            "preLaunchTask": "swift: Build Debug pastebin",
+            "env": {
+                "ENV": "local",
+                "LOG_LEVEL": "DEBUG",
+                "AWS_REGION": "us-east-1",
+
+                "S3_BUCKET": "myownbucket",
+                "S3_KEY_PREFIX": "pastes/",
+                "SUBMIT_SECRET": "topsecret",
+                "AWS_ACCESS_KEY_ID": "AKIAx",
+                "AWS_SECRET_ACCESS_KEY": "xx"
+            }
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:pastebin}",
+            "name": "Release pastebin",
+            "program": "${workspaceFolder:pastebin}/.build/release/pastebin",
+            "preLaunchTask": "swift: Build Release pastebin",
+            "env": {
+                "ENV": "local",
+                "LOG_LEVEL": "DEBUG",
+                "AWS_REGION": "us-east-1",
+
+                "S3_BUCKET": "myownbucket",
+                "S3_KEY_PREFIX": "pastes/",
+                "SUBMIT_SECRET": "topsecret",
+                "AWS_ACCESS_KEY_ID": "AKIAx",
+                "AWS_SECRET_ACCESS_KEY": "xx"
+            }            
+        }
+    ]
+}
