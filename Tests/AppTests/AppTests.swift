@@ -3,7 +3,7 @@ import HummingbirdTesting
 import Logging
 import XCTest
 
-@testable import {{HB_EXECUTABLE_NAME}}
+@testable import pastebin
 
 final class AppTests: XCTestCase {
     struct TestArguments: AppArguments {

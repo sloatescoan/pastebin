@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paste Website</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Paste Website</h1>
+    <form action="{{ pasteHandlerUrl }}" method="post" autocomplete="on">
+        {% if err == "secret" %}
+        <div class="error">Invalid secret.</div>
+        {% elif err == "input" %}
+        <div class="error">Input error.</div>
+        {% endif %}
+        <textarea name="paste" rows="20" cols="80" placeholder="Paste here"></textarea>
+        {% if showSecretInput %}
+        <div class="secret">
+            <input type="password" name="secret" placeholder="Secret" />
+            <input type="checkbox" name="remember" id="remember" value="remember" checked="checked">
+            <label for="remember">Remember?</label>
+        </div>
+        {% endif %}
+        <button type="submit">Paste!</button>
+    </form>
+</body>
+</html>
